@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
+    <script src="js/database.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <audio id="audio-engine" src="./audio/bukhanka.mp3"></audio>
+    <audio id="audio-bukhanka-mini" src="./audio/pussy wagon.mp3"></audio>
+    <audio id="audio-bukhanka-door" src="./audio/звук двери.mp3"></audio>
+    <audio id="audio-bukhanka-door-short" src="./audio/звук двери (short).mp3"></audio>
+    <audio id="audio-direction-img" src="./audio/direction-img.mp3"></audio>
+    <audio id="audio-direction-img-short" src="./audio/direction-img-short.mp3"></audio>
+    <audio id="audio-route-img" src="./audio/route-img.mp3"></audio>
+    <audio id="audio-route-img-short" src="./audio/route-img-short.mp3"></audio>
+    <audio id="audio-references" src="./audio/references.mp3"></audio>
+    <audio id="audio-settings" src="./audio/settings.mp3"></audio>
+    <audio id="audio-button-hover" src="./audio/button-hover.mp3"></audio>
+    <div class="main-container">
+        <img class="background-img" src="./img/bukhanka-background.png" alt="photo">
+        <div class="rubrics-menu">
+            <div class="title" id="direction-box-1">
+                <div class="forward-title" title="маршрут 1">Туда</div>
+                <div id="route-forward-1" class="f1" title="маршрут 1" onclick="renderPage('forward-1')">1</div>
+                <div id="route-forward-2" class="f2" title="маршрут 2" onclick="renderPage('forward-2')">2</div>
+                <img class="minicar-img" src="./img/minicar.png" alt="photo" onclick="showPopup(this)">
+            </div>
+            <div class="title" id="direction-box-2">
+                <div class="forward-title" title="маршрут 1">Обратно</div>
+                <div id="route-back-1" class="b1" title="маршрут 1" onclick="renderPage('back-1')">1</div>
+                <div id="route-back-2" class="b2" title="маршрут 2" onclick="renderPage('back-2')">2</div>
+                <div id="route-back-3" class="b3" title="маршрут 3" onclick="renderPage('back-3')">3</div>
+            </div>
+            <div id="routes"></div>
+        </div>
+        <div class="content-box">
+            <div class="details">
+                <div id="map-img"></div>
+                <div id="description-box">
+                    <div id="title-description">Описание</div>
+                    <div class="data" id="description"></div>
+                </div>
+                <div id="details-container">
+                    <div class="details-item-box">
+                        <div class="title-mini">Дистанция</div>
+                        <div class="details-item" id="distance"></div>
+                    </div>
+                    <div class="details-item-box">
+                        <div class="title-mini">Время в пути</div>
+                        <div class="details-item" id="time"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="menu-1" src="./img/microphone.png" alt="photo" title="Голосовые команды" onclick="startRecognition()" onmouseover="playAudio('button-hover')">
+    <img id="menu-2" src="./img/book1.png" alt="photo" title="Справка" onclick="showReferencePopup(this)" onmouseover="playAudio('button-hover')">
+    <img id="menu-3" src="./img/options.png" alt="photo" title="Настройки" onclick="showOptionsMenu(this)" onmouseover="playAudio('button-hover')">
+    <div id="iframeReferenceContainer" class="popup"></div>
+    <div id="iframeContainer" class="popup"></div>
+    <div id="videoPopup" style="display: none;"></div>
+    <script>
+        renderPage('forward-1');
+
+        document.getElementById('iframeContainer').addEventListener('click', function(event) {
+            if (event.target.className == 'popup') {
+                iframeContainer.style.display = 'none';
+                stopPlayingAudio();
+                document.removeEventListener('click', arguments.callee);
+            }
+
+        });
+
+        document.getElementById('iframeReferenceContainer').addEventListener('click', function(event) {
+            if (event.target.className == 'popup') {
+                iframeReferenceContainer.style.display = 'none';
+                stopPlayingAudio();
+                document.removeEventListener('click', arguments.callee);
+            }
+        });
+
+        // ГОЛОСОВЫЕ КОМАНДЫ
+        const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new speechRecognition() // Создание объекта распознавания речи
+        recognition.lang = "ru-RU"; // Установка языка распознавания
+        recognition.interimResults = false; // Устанавливаем, чтобы результаты отображались только после завершения записи речи
+        recognition.maxAlternatives = 1; // Устанавливаем максимальное число альтернатив распознавания
+
+        // Обработчик события, вызываемый после завершения распознавания речи
+        recognition.onresult = function(event) {
+          const result = event.results[0][0].transcript; // Получаем распознанный текст
+
+          runCommand(result);
+          console.log(result); // Выводим распознанный текст в консоль
+        };
+
+        // Обработчик события, вызываемый при ошибке распознавания речи
+        recognition.onerror = function(event) {
+          console.log(event.error); // Выводим ошибку в консоль
+        };
+
+        // Функция, которая запускает процесс распознавания речи
+        function startRecognition() {
+          recognition.start(); // Запуск распознавания речи
+          event.stopPropagation();
+        }
+    </script>
+</body>
+</html>
