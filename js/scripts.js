@@ -138,6 +138,8 @@ function playAudio(option) {
         }
     } else if (option == 'button-hover') {
         document.getElementById("audio-button-hover").play()
+    } else if (option == 'alice') {
+        document.getElementById("audio-alice").play()
     }
 }
 
@@ -174,10 +176,14 @@ function fillInputs() {
 }
 
 function runCommand(data) {
+    console.log(data)
     const question = /голос/i
+    const alice = /алиса.*голос.*/i
 
     // распознаём запрос
-    if (question.test(data)) {
+    if (alice.test(data)) {
+        playAudio("alice")
+    } else if (question.test(data)) {
         showVideoPopup()
     } else {
         alert('Команда не распознана')
