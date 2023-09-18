@@ -3,6 +3,10 @@
   --second-color: #E09DFF;
 }
 
+body {
+    overflow: hidden;
+}
+
 .main-container {
     display: flex;
     height: 98vh;
@@ -17,15 +21,6 @@
     display: flex;
     margin-top: 0;
     margin-left: 1vw;
-}
-
-.main-page-content {
-    width: 80.5vw;
-    overflow: auto;
-    border: 2px solid var(--main-color);
-    padding: 10px;
-    font-size: 2vw;
-    margin-left: 10px;
 }
 
 .questions-menu {
@@ -56,7 +51,7 @@
 
 .main-title {
     position: relative;
-    font-size: 2.2vh;
+    font-size: 2.1vh;
     width: 90%;
     border: 2px solid var(--main-color);
     margin: 5px;
@@ -164,14 +159,6 @@
     background-color: var(--main-color);
 }
 
-.itemInCatalog {
-    position: relative;
-    font-size: 1.4vw;
-    padding: 10px;
-    border: 1px solid white;
-    border-bottom: 1px solid var(--main-color);
-}
-
 .select-item {
     color: white;
     background-color: var(--main-color);
@@ -180,48 +167,6 @@
 a {
   text-decoration: none;
   color: black;
-}
-
-.itemInCatalog:hover {
-    cursor: pointer;
-    transition: 0.2s;
-    color: white;
-    background-color: var(--main-color);
-}
-
-.last-question {
-    margin-bottom: 0;
-    border-bottom: 1px solid white;
-}
-
-/* кастомный скролл */
-.main-page-content::-webkit-scrollbar,
-.items-container::-webkit-scrollbar,
-.question::-webkit-scrollbar,
-.answer::-webkit-scrollbar {
-    width: 10px;
-}
-
-.main-page-content::-webkit-scrollbar-track,
-.items-container::-webkit-scrollbar-track,
-.question::-webkit-scrollbar-track,
-.answer::-webkit-scrollbar-track {
-    background-color: rgba(128, 128, 128, 0.1);
-}
-
-.main-page-content::-webkit-scrollbar-thumb,
-.items-container::-webkit-scrollbar-thumb,
-.question::-webkit-scrollbar-thumb,
-.answer::-webkit-scrollbar-thumb {
-    background-color: rgba(256, 0, 0, 0.5);
-}
-
-.main-page-content,
-.items-container,
-.question,
-.answer {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(256, 0, 0, 0.5);
 }
 
 .map-img,
@@ -502,4 +447,38 @@ a {
     box-shadow: none; /* удаление тени при нажатии */
 }
 
+.title-1 {
+    width: 17vw;
+}
 
+.title-2 {
+    width: 13vw;
+}
+
+.title-3 {
+    width: 13vw;
+}
+
+.title-4 {
+    width: 8vw;
+}
+
+.title-5 {
+    width: 4vw;
+}
+
+.title-6 {
+    width: 11vw;
+}
+
+.title-7 {
+    width: 7vw;
+}
+
+.title-8 {
+    width: 11vw;
+}
+
+.description-item {
+    margin-bottom: 30px;
+}
