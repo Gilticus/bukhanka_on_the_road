@@ -142,6 +142,16 @@ function playAudio(option) {
         document.getElementById("audio-alice").play()
     } else if (option == 'gilticus') {
         document.getElementById("audio-gilticus").play()
+    } else if (option == 'bkt') {
+        document.getElementById("audio-bkt").play()
+    } else if (option == 'slon') {
+        document.getElementById("audio-slon").play()
+    } else if (option == 'kamsky') {
+        document.getElementById("audio-kamsky").play()
+    } else if (option == 'lider') {
+        document.getElementById("audio-lider").play()
+    } else if (option == 'savini') {
+        document.getElementById("audio-savini").play()
     }
 }
 
@@ -181,7 +191,12 @@ function runCommand(data) {
     console.log(data)
     const question = /голос/i
     const alice = /лиса.*голос/i
-    const gilticus = /кто.*такая.*(гилтикус|(guilty|gild|guild) (вкус|курс|гос))/i
+    const gilticus = /(гилтикус|guilty|(guilty|gild|guild) (вкус|курс|гос))/i
+    const bkt = /(бкт|бэкатэ|б как - то|бгг|б - карты|бк t|бк ты|б кт|б к т|богаты|бабка - то|бабка то|бк - то|бака t|будто)/i
+    const slon = /слон/i
+    const kamsky = /камски/i
+    const lider = /лидер/i
+    const savini = /савини/i
 
     // распознаём запрос
     if (alice.test(data)) {
@@ -190,6 +205,16 @@ function runCommand(data) {
         showVideoPopup()
     } else if (gilticus.test(data)) {
         playAudio("gilticus")
+    } else if (bkt.test(data)) {
+        playAudio("bkt")
+    } else if (slon.test(data)) {
+        playAudio("slon")
+    } else if (kamsky.test(data)) {
+        playAudio("kamsky")
+    } else if (lider.test(data)) {
+        playAudio("lider")
+    } else if (savini.test(data)) {
+        playAudio("savini")
     } else {
         alert('Команда не распознана')
     }
