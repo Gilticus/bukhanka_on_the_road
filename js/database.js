@@ -497,12 +497,12 @@ var optionsValue = [0, 0, 0, 0, 0, 0, 0]
 
 var referenceMenu = `
     <div class="reference-menu-popup">
-        <div class="menu-item first-menu-option reference-title">
+        <div class="menu-item first-menu-option reference-title title-1">
             <div class="menu-item-inner reference">
                 Общая информация о маршрутах
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 Все маршруты по большей части повторяются. После Омска до Владивостока одна единственная дорога (южнее
                 Казахстан, Монголия и Китай, севернее тайга и бездорожье). От Москвы до Омска есть несколько вариантов +
@@ -516,12 +516,12 @@ var referenceMenu = `
             </div>
         </div>
 
-        <div class="menu-item reference-title">
+        <div class="menu-item reference-title title-2">
             <div class="menu-item-inner reference">
                 Выбор полного маршрута
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 В левом верхнем углу цифры обозначают варианты маршрутов. От Москвы до Владивостока есть 2 маршрута, в
                 обратную сторону 3 маршрута. Переключаясь между ними мы получаем отдельную карту с отмеченными городами
@@ -529,24 +529,24 @@ var referenceMenu = `
             </div>
         </div>
 
-        <div class="menu-item first-menu-option reference-title">
+        <div class="menu-item reference-title title-3">
             <div class="menu-item-inner reference">
                 Выбор маршрута на день
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 При выборе любого из общих маршрутов слева появляется список маршрутов на каждый день, по клику любой
                 маршрут откроется и можно посмотреть карту этого маршрута, описание и детали.
             </div>
         </div>
 
-        <div class="menu-item first-menu-option reference-title">
+        <div class="menu-item reference-title title-4">
             <div class="menu-item-inner reference">
                 Изображения
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 Любое изображение можно увеличить кликнув на него (изображение развернётся на весь экран). Если нужна
                 более подробная детализация, то можно развернуть изображение до полного масштаба, для этого нужно
@@ -555,12 +555,12 @@ var referenceMenu = `
             </div>
         </div>
 
-        <div class="menu-item first-menu-option reference-title">
+        <div class="menu-item reference-title title-5">
             <div class="menu-item-inner reference">
                 Звуки
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 1) Звуки мини-буханки - из стрима "Легендарное лакирование УАЗика"<br>
                 2) Выбор полного маршрута (звуки двери) - из стрима "сборка моей буханки"<br>
@@ -573,12 +573,12 @@ var referenceMenu = `
             </div>
         </div>
 
-        <div class="menu-item first-menu-option reference-title">
+        <div class="menu-item reference-title title-6">
             <div class="menu-item-inner reference">
                 Голосовые команды
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 Чтобы запустить голосовую команду нужно кликнуть по иконке микрофона и произнести команду из списка ниже.
                 Пока что доступна одна команда, раздел находится в разработке.<br>
@@ -588,12 +588,12 @@ var referenceMenu = `
             </div>
         </div>
 
-        <div class="menu-item reference-title">
+        <div class="menu-item reference-title title-7">
             <div class="menu-item-inner reference">
                 Настройки
             </div>
         </div>
-        <div class="menu-item last-menu-option">
+        <div class="menu-item description-item">
             <div class="menu-item-inner reference">
                 В верхнем правом углу первым снизу идёт меню с настройками (иконка с тремя полосками), там можно
                 настроить звуковое сопровождение сайта. У всех действий можно отключить звуковое сопровождение,
@@ -601,7 +601,7 @@ var referenceMenu = `
             </div>
         </div>
 
-        <div class="menu-item first-menu-option reference-title">
+        <div class="menu-item reference-title title-8">
             <div class="menu-item-inner reference">
                 Известные проблемы
             </div>
