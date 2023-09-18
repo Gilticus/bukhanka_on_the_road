@@ -140,6 +140,8 @@ function playAudio(option) {
         document.getElementById("audio-button-hover").play()
     } else if (option == 'alice') {
         document.getElementById("audio-alice").play()
+    } else if (option == 'gilticus') {
+        document.getElementById("audio-gilticus").play()
     }
 }
 
@@ -178,13 +180,16 @@ function fillInputs() {
 function runCommand(data) {
     console.log(data)
     const question = /голос/i
-    const alice = /алиса.*голос.*/i
+    const alice = /лиса.*голос/i
+    const gilticus = /кто.*такая.*(гилтикус|(guilty|gild|guild) (вкус|курс|гос))/i
 
     // распознаём запрос
     if (alice.test(data)) {
         playAudio("alice")
     } else if (question.test(data)) {
         showVideoPopup()
+    } else if (gilticus.test(data)) {
+        playAudio("gilticus")
     } else {
         alert('Команда не распознана')
     }
