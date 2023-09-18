@@ -192,7 +192,7 @@ function runCommand(data) {
     const question = /голос/i
     const alice = /лиса.*голос/i
     const gilticus = /(гилтикус|guilty|(guilty|gild|guild) (вкус|курс|гос))/i
-    const bkt = /(бкт|бэкатэ|б как - то|бгг|б - карты|бк t|бк ты|б кт|б к т|богаты|бабка - то|бабка то|бк - то|бака t|будто|бака ты)/i
+    const bkt = /(бкт|бэкатэ|б как - то|бгг|б - карты|бк t|бк ты|б кт|б к т|богаты|бабка - то|бабка то|бк - то|бака t|будто|бака ты|б - кт)/i
     const slon = /слон/i
     const kamsky = /камски/i
     const lider = /лидер/i
